@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="ssh2.matss.sshtunnel">
+
+    <!--- Permissions -->
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!--- Application -->
+    <application>
+
+        <!--- Activities -->
+        <activity
+            android:name="ssh2.matss.sshtunnel.LaunchVpn"
+            android:autoRemoveFromRecents="true"
+            android:excludeFromRecents="true"
+            android:taskAffinity=".LaunchVPN"
+            android:theme="@style/blinkt.dialog"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--         This is for ensuring the background service still runs when/if the app is swiped away -->
+        <activity
+            android:name="ssh2.matss.sshtunnel.utils.DummyActivity"
+            android:allowTaskReparenting="true"
+            android:alwaysRetainTaskState="false"
+            android:clearTaskOnLaunch="true"
+            android:enabled="true"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:noHistory="true"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <!--- Receivers -->
+        <receiver
+            android:name="ssh2.matss.sshtunnel.MainReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name=".MainReceiver.ACTION_SERVICE_STOP">
+                </action>
+                <action
+                    android:name=".MainReceiver.ACTION_SERVICE_RESTART">
+                </action>
+            </intent-filter>
+        </receiver>
+
+
+        <!--- Services -->
+        <service android:label="SocksHttp Vpn"
+            android:name="ssh2.matss.sshtunnel.tunnel.vpn.TunnelVpnService"
+            android:exported="false"
+            android:enabled="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:label="SocksHttp Service"
+            android:name="ssh2.matss.sshtunnel.SocksHttpService"
+            android:stopWithTask="false"
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
+        </service>
+
+    </application>
+
+
+</manifest>

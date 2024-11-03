@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ssh2.matss.ph.MainActivity">
+
+    <item
+        android:id="@+id/payload_generator"
+        android:title="@string/nav_title_payload"
+        android:icon="@drawable/ic_baseline_settings_ethernet_24"/>
+
+    <item
+        android:id="@+id/telegram"
+        android:title="@string/nav_title_community"
+        android:icon="@drawable/ic_baseline_chat_24"/>
+
+    <item
+        android:id="@+id/menu_clear"
+        android:title="@string/nav_restore_data"
+        android:icon="@drawable/ic_baseline_settings_backup_restore_24"/>
+
+
+    <item
+        android:id="@+id/action_update"
+        android:orderInCategory="100"
+        android:title="@string/action_update_resources"
+        android:icon="@drawable/ic_baseline_settings_backup_restore_24"/>
+
+</menu>

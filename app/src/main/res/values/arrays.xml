@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Languange -->
+    <array name="pref_language_option_labels">
+        <item>Default</item>
+        <item>Filipino</item>
+    </array>
+
+    <array name="pref_language_option_values">
+        <item>default</item>
+        <item>fil</item>
+    </array>
+
+
+    <!-- SSL Version ListPreference -->
+    <string-array name="ssl_version_entries">
+        <item>Default</item>
+        <item>TLSv1</item>
+        <item>TLSv1.1</item>
+        <item>TLSv1.2</item>
+        <item>TLSv1.3</item>
+    </string-array>
+
+    <array name="request">
+        <item>GET</item>
+        <item>POST</item>
+        <item>HEAD</item>
+        <item>OPTIONS</item>
+        <item>PUT</item>
+        <item>DELETE</item>
+        <item>TRACE</item>
+        <item>PATCH</item>
+    </array>
+
+
+    <string-array name="request_methods_arrays">
+        <item>CONNECT</item>
+        <item>DELETE</item>
+        <item>GET</item>
+        <item>HEAD</item>
+        <item>OPTIONS</item>
+        <item>PATCH</item>
+        <item>POST</item>
+        <item>PROPATCH</item>
+        <item>PUT</item>
+        <item>TRACE</item>
+    </string-array>
+
+    <string-array name="inject_methods_arrays">
+        <item>Normal</item>
+        <item>Front Inject</item>
+        <item>Back Inject</item>
+    </string-array>
+
+    <string-array name="userAgent">
+        <item>Default</item>
+        <item>Firefox</item>
+        <item>Chrome</item>
+        <item>Opera Mini</item>
+        <item>Puffin</item>
+        <item>Safari</item>
+        <item>UCBrowser</item>
+    </string-array>
+
+</resources>

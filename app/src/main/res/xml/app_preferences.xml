@@ -1,0 +1,117 @@
+<androidx.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:key="screenMain">
+
+    <PreferenceCategory
+        android:title="Custom Server Configuration"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="keyUseCustomServer"
+            android:title="Use Custom Server"
+            android:summary="Enable to configure a custom server."
+            app:iconSpaceReserved="false"/>
+
+        <Preference
+            android:key="keyConfigureCustomServer"
+            android:title="Configure Custom Server"
+            android:summary="Click to set up your custom server."
+            android:enabled="false"
+        app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_forward_udp"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="keyUDPForward"
+            android:summary="@string/summary_forward_udp"
+            android:title="@string/title_forward_udp"
+            app:iconSpaceReserved="false"/>
+
+        <ssh2.matss.ph.preferences.SummaryEditTextPreference
+            android:key="keyUDPResolver"
+            android:title="@string/title_resolver_udp"
+            android:summary="@string/summary_resolver_udp"
+            android:dialogMessage=""
+            app:iconSpaceReserved="false"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_forward_dns"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="keyDnsForward"
+            android:summary="@string/summary_forward_dns"
+            android:title="@string/title_forward_dns"
+            app:iconSpaceReserved="false"/>
+
+        <ssh2.matss.ph.preferences.SummaryEditTextPreference
+            android:key="keyDnsPrimary"
+            android:title="Primary DNS"
+            android:maxLength="3"
+            android:summary="8.8.8.8"
+            app:iconSpaceReserved="false" />
+
+        <ssh2.matss.ph.preferences.SummaryEditTextPreference
+            android:key="keyDnsSecondary"
+            android:title="Secondary DNS"
+            android:maxLength="3"
+            android:summary="8.8.4.4"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_settings_adicionais"
+        app:iconSpaceReserved="false">
+
+        <ssh2.matss.ph.preferences.SummaryEditTextPreference
+            android:key="keySSHPinger"
+            android:title="@string/title_ping_time"
+            android:maxLength="3"
+            android:summary="@string/no_value"
+            app:iconSpaceReserved="false" />
+
+    </PreferenceCategory>
+
+    <SwitchPreferenceCompat
+        android:key="keyWakelock"
+        android:summary="@string/wakelock_summary"
+        android:title="Wakelock"
+        app:iconSpaceReserved="false"/>
+
+    <SwitchPreferenceCompat
+        android:key="keyDataCompress"
+        android:summary="Compress and speed up data transfer for files/data that can be compressed. \nNOT recommended for low memory devices."
+        android:title="Data Compression"
+        app:iconSpaceReserved="false"/>
+
+    <androidx.preference.ListPreference
+        android:key="keyLanguage"
+        android:defaultValue="default"
+        android:entries="@array/pref_language_option_labels"
+        android:entryValues="@array/pref_language_option_values"
+        android:title="@string/title_language"
+        android:summary="%s"
+        app:iconSpaceReserved="false"/>
+
+    <ssh2.matss.ph.preferences.ThemePreference
+        android:key="app_theme"
+        android:title="Theme"
+        android:summary="Choose Light or Dark Mode"
+        app:iconSpaceReserved="false"/>
+
+    <Preference
+        android:key="identification_preference"
+        android:title="Device Identification"
+        android:summary="View and copy your unique device identifier"
+        app:icon="@drawable/ic_baseline_fingerprint_24"
+        app:iconTint="@color/colorAccent" />
+
+
+</androidx.preference.PreferenceScreen>

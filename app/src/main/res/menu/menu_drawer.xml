@@ -1,0 +1,16 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group
+        android:id="@+id/menu_vpn">
+
+        <item
+            android:id="@+id/use_custom_server"
+            app:actionLayout="@layout/switch_custom"
+            android:title="@string/nav_title_custom_server"
+            android:icon="@drawable/ic_baseline_cloud_24"/>
+    </group>
+
+
+</menu>

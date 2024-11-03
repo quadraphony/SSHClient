@@ -1,0 +1,63 @@
+{
+  "customs": [
+    {
+      "name": "Direct Connection",
+      "info": "Wifi and Data",
+      "icon": "rocket"
+    },
+    {
+      "name": "Direct Payload",
+      "info": "Custom Header",
+      "icon": "rocket"
+    },
+    {
+      "name": "HTTP Header",
+      "info": "SSH/HTTP Method",
+      "icon": "rocket"
+    },
+    {
+      "name": "Custom SNI",
+      "info": "SSL/TLS(stunnel)",
+      "icon": "rocket"
+    },
+    {
+      "name": "Custom DNS",
+      "info": "DNSTT(slowdns)",
+      "icon": "rocket"
+    },
+    {
+      "name": "FastDNS",
+      "info": "Optimized DNS",
+      "icon": "rocket"
+    },
+    {
+      "name": "Custom UDP",
+      "info": "Hysteria UDP",
+      "icon": "rocket"
+    },
+    {
+      "name": "Custom V2ray",
+      "info": "Vmess | Vless",
+      "icon": "rocket"
+    },
+    {
+      "name": "Imported File",
+      "info": "Generated File | .arm",
+      "icon": "rocket"
+    }
+  ],
+  "proxy_port": [
+    {
+      "name": "P 8000",
+      "port": 8000
+    },
+    {
+      "name": "P 8080",
+      "port": 8080
+    },
+    {
+      "name": "P 8888",
+      "port": 8888
+    }
+  ]
+}

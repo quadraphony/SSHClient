@@ -1,0 +1,103 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'ssh2.matss.ph'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "ssh2.matss.ph"
+        minSdk 23
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86','x86_64','armeabi-v7a', 'arm64-v8a' //select ABIs to build APKs for
+            universalApk true //generate an additional APK that contains all the ABIs
+        }
+    }
+
+    viewBinding {
+        enabled = true
+    }
+    
+    signingConfigs {
+        release {
+            storeFile file('../key/matss.jks')
+            storePassword 'iammatss'
+            keyAlias 'matss'
+            keyPassword 'iammatss'
+            //v2SigningEnabled true
+        }
+        debug {
+            storeFile file('../key/matss.jks')
+            storePassword 'iammatss'
+            keyAlias 'matss'
+            keyPassword 'iammatss'
+            //v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation project(':library')
+    implementation project(':sshtunnel')
+
+    implementation "androidx.security:security-crypto:1.1.0-alpha06"
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.preference:preference:1.2.1'
+
+    implementation 'com.google.android.gms:play-services-ads:23.5.0'
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+
+
+
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-runtime:2.8.7"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.8.7"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

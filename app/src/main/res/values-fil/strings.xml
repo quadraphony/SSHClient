@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appname "Custom Tweak">
+    ]>
+
+<resources>
+    <string name="app_name">&appname;</string>
+    <string name="action_settings">Mga setting</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Unang Fragment</string>
+    <string name="second_fragment_label">Pangalawang Fragment</string>
+    <string name="next">Susunod</string>
+    <string name="previous">Nakaraang</string>
+
+    <string name="hello_first_fragment">Hello unang fragment</string>
+    <string name="hello_second_fragment">Hello pangalawang fragment. Arg: %1$s</string>
+    <string name="title_settings">Mga setting</string>
+    <string name="title_file">Mga file</string>
+    <string name="title_import">Angkat</string>
+    <string name="title_export">I-export</string>
+
+    <string name="title_time_remaining">Natitirang oras</string>
+    <string name="label_timer">00:00</string>
+
+    <string name="hint_payload">Custom na Payload</string>
+    <string name="hint_sni">Indikasyon ng Pangalan ng Server (SNI)</string>
+    <string name="hint_dns">Domain Name System</string>
+
+    <string name="label_message">Mensahe</string>
+    <string name="label_description">MENSAHE SA PAGLALARAWAN (HTML ✓)</string>
+    <string name="label_extras">MGA EXTRA</string>
+    <string name="label_mobile_data">Mobile Data</string>
+    <string name="label_block_root">I-block ang Root</string>
+    <string name="label_lock">Lock</string>
+    <string name="label_password">Password</string>
+    <string name="label_hwid_lock">HWID Lock</string>
+    <string name="label_expire_date">Petsa na mawawalan ng bisa</string>
+    <string name="label_unknown">(Hindi alam)</string>
+    <string name="label_hwid">HWID (hal. hwid01)</string>
+    <string name="label_export_note">Ang na-export na file ay hindi tugma sa mga mas lumang bersyon ng &appname; kung ang alinman sa setting na \'mga extra\' ay may check.</string>
+    <string name="label_export">EXPORT</string>
+    <string name="label_file_name">NAME NG FILE</string>
+    <string name="label_select_server">Piliin ang Server</string>
+    <string name="label_select_tweaks">Piliin ang Tweaks</string>
+    <string name="label_select_port">PUMILI NG PORT</string>
+    <string name="label_author">Binuo ni Matss</string>
+    <string name="label_start">MAGSIMULA</string>
+    <string name="label_add_time">ADD+ TIME</string>
+
+    <string name="error_date_selected_invalid">Ang napiling araw ay hindi maaaring mas mababa kaysa ngayon</string>
+
+    <!--- action messages -->
+    <string name="notification_channel_id">default</string>
+    <string name="minimize">I-minimize</string>
+    <string name="exit">Lumabas</string>
+    <string name="yes">Oo</string>
+    <string name="no">Hindi</string>
+    <string name="save">I-save</string>
+    <string name="open">Tumawa si Ab</string>
+    <string name="more">Higit pa</string>
+    <string name="cancel">Kanselahin</string>
+    <string name="wait">Teka</string>
+    <string name="attention">Pansin</string>
+    <string name="ok">Ok</string>
+    <string name="close">Isara</string>
+    <string name="open_with">Buksan sa</string>
+    <string name="clear_settings">Ibalik</string>
+    <string name="clear_logs">I-clear ang mga Log</string>
+    <string name="settings_ImportExport">Import/Export</string>
+    <string name="settings_import">Pag-import ng Configuration</string>
+    <string name="settings_export">I-export ang Configuration</string>
+    <string name="actived">Pinagana</string>
+    <string name="disabled">Hindi pinagana</string>
+    <string name="reset">I-RESET</string>
+    <string name="input_note_msg">Mensahe/Paalala sa mga user (opsyonal)</string>
+    <string name="check_date_valid">Itakda ang Petsa ng Bisa</string>
+    <string name="title_extra">Dagdag</string>
+    <string name="name_file">Pangalan ng File</string>
+    <string name="settings">Mga setting</string>
+    <string name="settings_ssh">Mga Setting ng SSH</string>
+    <string name="ssh_server">server</string>
+    <string name="ssh_port">Port</string>
+    <string name="ssh_porta_local">Lokal na Port (Socks5)</string>
+    <string name="payload">Payload</string>
+    <string name="proxy_remote">Malayong Proxy</string>
+    <string name="proxy_ip">Proxy IP/Host</string>
+    <string name="proxy_port">Port</string>
+    <string name="proxy_auth">Proxy Authentication</string>
+    <string name="proxy_user">Username</string>
+    <string name="proxy_pass">Password</string>
+    <string name="dir_name">Folder</string>
+    <string name="alert_exit">Sigurado ka bang gusto mong umalis?</string>
+    <string name="alert_clear_settings">Sigurado ka bang gusto mong ibalik ang mga default na setting?</string>
+    <string name="squid">(hal: Pusit, Websocket)</string>
+    <string name="no_value">wala</string>
+    <string name="blocked">Naka-block</string>
+    <string name="expired">Nag-expire na</string>
+    <string name="title_delete_file">Burahin ang file</string>
+    <string name="alert_delete_file">Gusto mo bang tanggalin ang file na ito?</string>
+    <string name="dir_home_name">Panloob na Memorya</string>
+    <string name="select_file_setting">Pumili ng file</string>
+    <string name="title_permission_request">Pinayagang pahintulot</string>
+    <string name="message_permission_request">Mangyaring, kinakailangan na magbigay ng kinakailangang pahintulot para gumana nang maayos ang aplikasyon.</string>
+    <string name="show_license">Tingnan ang Mga Lisensya</string>
+    <string name="wrong_password">"Maling password!"</string>
+
+    <string name="logCleared">Na-clear ang log.</string>
+    <string name="ics_openvpn_log_file">ICS OpenVPN log file</string>
+    <string name="copied_entry">Kinopya ang log entry sa clip board</string>
+    <string name="label_has_password">May password ang config na ito, pakilagay ito para ma-import ang config na ito</string>
+    <string name="title_restore">Ibalik</string>
+    <string name="hint_custom">Custom na Setup</string>
+
+    <string name="category_forward_udp" translatable="false">UDP Forwarding</string>
+    <string name="title_forward_udp" translatable="false">UDP Forwarding</string>
+    <string name="summary_forward_udp" translatable="false">If enabled redirects requests to the remote server. If not, UDP requests will not be resolved.</string>
+    <string name="title_resolver_udp" translatable="false">UDP Gateway (Remote)</string>
+    <string name="summary_resolver_udp" translatable="false">Default (7300)</string>
+    <string name="category_forward_dns" translatable="false">DNS Forwarding</string>
+    <string name="title_forward_dns" translatable="false">Forward DNS</string>
+    <string name="summary_forward_dns" translatable="false">If enabled redirects requests to the remote server. If not, the DNS requests will be resolved by the local system.</string>
+    <string name="title_dns_primary" translatable="false">Primary DNS</string>
+    <string name="summary_dns_primary" translatable="false">Default (1.1.1.1)</string>
+    <string name="dialog_message_dns_primary" translatable="false">Type the DNS ip</string>
+    <string name="category_advanced_settings" translatable="false">Advanced Settings</string>
+    <string name="title_hide_log" translatable="false">Hide Log on Start</string>
+    <string name="summary_hide_log" translatable="false">If the log is not enabled will be shown automatically.</string>
+    <string name="title_auto_clear_log" translatable="false">Auto Clear Logs</string>
+    <string name="summary_auto_clear_log" translatable="false">If enabled the logs are cleared automatically.</string>
+    <string name="category_forward_port" translatable="false">Port Forwarding</string>
+    <string name="title_mode_debug" translatable="false">Debug mode</string>
+    <string name="summary_mode_debug" translatable="false">Allows you to see more advanced information in the logs.</string>
+    <string name="title_number_max_threads" translatable="false">Maximum Number of Threads</string>
+    <string name="summary_number_max_threads" translatable="false">The higher the number of Threads, the higher the power consumption and connection speed on your device.</string>
+    <string name="category_filter_apps" translatable="false">Apps Filter</string>
+    <string name="title_filter_apps" translatable="false">Apps Filter</string>
+    <string name="title_bypass_mode" translatable="false">Bypass Mode</string>
+    <string name="summary_bypass_modo" translatable="false">If enabled, traffic from selected apps will be sent directly.</string>
+    <string name="title_apps_list" translatable="false">List of Apps</string>
+    <string name="summary_apps_list" translatable="false">Type a package name by line. See Settings -> Apps for app package name.</string>
+    <string name="category_settings_adicionais" translatable="false">Additional settings</string>
+    <string name="title_mode_night" translatable="false">Night Mode (beta)</string>
+    <string name="title_ping_time" translatable="false">Ping (seconds)</string>
+    <string name="category_user_interface" translatable="false">User Interface</string>
+    <string name="title_language" translatable="false">Language</string>
+    <string name="category_tunnel" translatable="false">Tunnel</string>
+    <string name="title_disable_delay_ssh" translatable="false">Disable TCP Delay</string>
+    <string name="summary_disable_delay_ssh" translatable="false">If enabled there will be no delays between requests, which can improve the ping or even the connection speed.</string>
+    <string name="title_tethering_subnet" translatable="false">Tethering Subnet (beta)</string>
+    <string name="summary_tethering_subnet" translatable="false">Enable if you are having problems to share the internet from your device.</string>
+    <string name="wakelock_summary" translatable="false">Activate only if application is stopping working on its own, as happens when locking the screen on some devices.</string>
+    <string name="zero_kb">0kb</string>
+
+    <string name="label_claim">CLAIM REWARD</string>
+    <string name="label_retry">SUBUKIN MULI</string>
+    <string name="action_update_resources">I-update ang Mga Mapagkukunan</string>
+    <string name="nav_title_identity">Pagkakakilanlan</string>
+    <string name="nav_title_payload">Tagabuo ng Payload</string>
+    <string name="nav_title_settings">Mga setting</string>
+    <string name="nav_title_community">Komunidad</string>
+    <string name="nav_title_about">Tungkol sa</string>
+    <string name="nav_title_clear_app_data">I-clear ang Data ng App</string>
+    <string name="nav_title_custom_server">Custom na Server</string>
+    <string name="nav_restore_data">Restore Data</string>
+
+    <!--- About App -->
+    <string name="head1">Terms of Use</string>
+    <string name="head2">1. Responsibility.</string>
+    <string name="head3">2. Service warranty.</string>
+    <string name="head4">3. Privacy.</string>
+    <string name="text1">By using this program, you agree to all of the quotations below.</string>
+    <string name="text2">Consider this program as a network tool that ensures security and anonymity and enables you to customize the start of the connection to the server.With the start of the custom connection, it is possible to bypass restrictions imposed on any type of internet network.</string>
+    <string name="text3">The user is responsible for any damage caused to a network that is vulnerable to this technique and is also responsible for the damage caused to itself (charges, processes…).</string>
+    <string name="text4">We use the SSH 2.0, TLS and P2P protocols to cover the entire connection between client and server, so our service is susceptible to the same flaws and vulnerabilities present in this technology.</string>
+    <string name="text5">We do not guarantee full connection stability or full server availability, but we will do everything possible to make everything work well.</string>
+    <string name="text6">It collects statistics of usage and crash reports, collected by Google Play, Firebase…</string>
+    <string name="text7">It also collects search history and geographic location for advertisement selection.</string>
+
+
+
+
+</resources>
+

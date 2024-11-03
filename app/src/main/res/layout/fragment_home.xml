@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activity_mainLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            tools:ignore="UselessParent">
+
+            <!--- server -->
+
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2.0dip"
+                app:cardElevation="3dp">
+
+                <LinearLayout
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+
+                    <TextView
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="5dp"
+                        android:textSize="12.0sp"
+                        android:letterSpacing="0.1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_select_server"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <Spinner
+                            android:id="@+id/sp_server"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp" />
+
+                        <Spinner
+                            android:id="@+id/sp_network"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="2dp" />
+
+                    </LinearLayout>
+
+
+                    <!--- bytes -->
+
+
+                    <View
+                        android:layout_marginTop="18dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="@drawable/divider"
+                        />
+
+                    <LinearLayout
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:textSize="12.0sp"
+                            android:letterSpacing="0.1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_select_tweaks"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:layout_gravity="start"/>
+
+                        <LinearLayout
+                            android:id="@+id/lay_bytes"
+                            android:gravity="end"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/ic_baseline_arrow_circle_down_24"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center"
+                                app:tint="@color/tint" />
+
+                            <TextView
+                                android:layout_marginEnd="4dp"
+                                android:textSize="12sp"
+                                android:layout_gravity="center"
+                                android:text="@string/zero_kb"
+                                android:id="@+id/tv_bytes_in"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"/>
+
+                            <ImageView
+                                android:layout_marginEnd="4dp"
+                                android:src="@drawable/ic_baseline_arrow_circle_up_24"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center"
+                                app:tint="@color/tint" />
+
+                            <TextView
+                                android:layout_marginEnd="4dp"
+                                android:textSize="12sp"
+                                android:layout_gravity="center"
+                                android:text="@string/zero_kb"
+                                android:id="@+id/tv_bytes_out"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <!--- server tweaks -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Custom"
+                            android:id="@+id/switch_custom" />
+
+                    </LinearLayout>
+
+
+                    <!--- payload -->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/input_payload"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:hint="@string/hint_payload"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_payload"
+                            android:inputType="textMultiLine|textLongMessage"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/hint_payload"
+                            android:ems="20" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <!--- timer -->
+
+                    <Button
+                        android:id="@+id/btn_connection"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="@string/label_start"
+                        android:textColor="@color/white" />
+
+                    <LinearLayout
+                        android:id="@+id/layTimer"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:weightSum="2"
+                        android:padding="5dp"
+                        android:orientation="horizontal"
+                        android:gravity="center|start"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="45dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_timer"/>
+
+                            <LinearLayout
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="10sp"
+                                    android:text="@string/title_time_remaining"
+                                    android:id="@+id/timer" />
+
+                                <TextView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:text="@string/label_timer"
+                                    android:id="@+id/tv_userTimer" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_add_timer"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_add_time"/>
+
+                                <Button
+                                    android:visibility="gone"
+                                    android:id="@+id/btn_claim"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_claim"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <!-- author -->
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textSize="12sp"
+                        android:text="@string/label_author"
+                        android:id="@+id/tv_author" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ads -->
+
+            <RelativeLayout
+                android:id="@+id/rl_adview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center_horizontal" />
+
+        </LinearLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
