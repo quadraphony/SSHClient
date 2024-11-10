@@ -56,17 +56,20 @@ public class OharaAdapter extends BaseAdapter {
         binding.tvName.setText(data.get("mName"));
         binding.tvInfo.setText(data.get("mInfo"));
 
-        if (str != null) setServerIcon(icon, is ? str : "rocket");
+        // Set the flag emoji based on the `mIcon` field, regardless of `is`
+        if (str != null) {
+            setServerIcon(icon, str);
+        } else {
+            icon.setText("🚀"); // Default to rocket if no icon is provided
+        }
 
         return binding.getRoot();
     }
-
 
     private void setServerIcon(TextView textView, String countryCode) {
         String flagEmoji = getFlagEmoji(countryCode);
         textView.setText(flagEmoji);
     }
-
 
     private String getFlagEmoji(String countryCode) {
         if (countryCode.length() == 2) { // Country codes are typically 2 letters

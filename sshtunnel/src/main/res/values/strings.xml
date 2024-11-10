@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-	<string name="app_name">SocksHttp</string>
+	<string name="app_name">Custom Tweak</string>
 	<string name="app_description">SocksHttp is an SSH TUNNEL client, designed to bypass local locks and network censorship.</string>
 
 	<string name="attention">Attention</string>
