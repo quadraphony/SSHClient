@@ -18,7 +18,7 @@ public final class AppConstants {
     public static String APP_OPEN_ID = "ca-app-pub-3940256099942544/3419835294";
 
     public static final String CIPHER_KEY = "matsscrypt";
-    public static final String RESOURCES_URL = "https://raw.githubusercontent.com/quadraphony/cus/main/1";
+    public static final String RESOURCES_URL = "https://raw.githubusercontent.com/Xore-Builds/Private-Network-Virtual/refs/heads/main/xore";
     public static final String CHANNEL_URL = "http://telegram.me/customtweak";
 
     public static final String LOCKED = "Locked";
