@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -84,8 +84,6 @@
                         />
 
                     <LinearLayout
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
                         android:layout_marginBottom="5dp"
                         android:layout_marginTop="18dp"
                         android:layout_width="match_parent"
@@ -150,6 +148,12 @@
 
                     </LinearLayout>
 
+                    <View
+                        android:layout_marginTop="18dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="1px"
+                        android:background="@drawable/divider"
+                        />
 
                     <!--- server tweaks -->
 
@@ -198,8 +202,8 @@
 
                     <!--- timer -->
 
-                    <Button
-                        android:id="@+id/btn_connection"
+                   <!-- <Button
+                        android:id="@+id/btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
@@ -207,7 +211,7 @@
                         android:layout_marginEnd="5dp"
                         android:text="@string/label_start"
                         android:textColor="@color/white" />
-
+-->
                     <LinearLayout
                         android:id="@+id/layTimer"
                         android:layout_marginTop="5dp"
@@ -314,7 +318,56 @@
         </LinearLayout>
 
 
-
     </androidx.core.widget.NestedScrollView>
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp">
 
-</LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:backgroundTint="@color/colorPrimary"
+            android:padding="12dp">
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="1">
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btn_connection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:srcCompat="@android:drawable/ic_media_play"
+                    app:tint="@android:color/white"
+                    app:elevation="0dp"
+                    android:contentDescription="@string/label_start"/>
+
+
+                <TextView
+                    android:id="@+id/tvButtonLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_start"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="15dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

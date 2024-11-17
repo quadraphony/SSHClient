@@ -175,5 +175,7 @@
     <string name="text5">We do not guarantee full connection stability or full server availability, but we will do everything possible to make everything work well.</string>
     <string name="text6">It collects statistics of usage and crash reports, collected by Google Play, Firebase…</string>
     <string name="text7">It also collects search history and geographic location for advertisement selection.</string>
+    <string name="delete_logs">Delete logs</string>
+    <string name="share_logs">Share Logs</string>
 
 </resources>

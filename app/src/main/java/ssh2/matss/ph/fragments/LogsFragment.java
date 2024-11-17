@@ -2,9 +2,6 @@ package ssh2.matss.ph.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -43,14 +40,11 @@ public class LogsFragment extends Fragment implements LogsAdapter.OnItemClickLis
 
         mAdapter.scrollToLastPosition();
 
-        setHasOptionsMenu(true);
+        // Set up listeners for the buttons
+        binding.btnShare.setOnClickListener(v -> mAdapter.shareLog());
+        binding.btnDelete.setOnClickListener(v -> mAdapter.clearLog());
 
         return binding.getRoot();
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
     }
 
     @Override
@@ -65,33 +59,13 @@ public class LogsFragment extends Fragment implements LogsAdapter.OnItemClickLis
         binding = null;
     }
 
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_logs, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Menu Itens
-        int itemId = item.getItemId();
-        if (itemId == R.id.deleteLogs) {// Para Android 6.0 Marshmallow e superior
-            mAdapter.clearLog();
-        } else if (itemId == R.id.shareLogs) {
-            mAdapter.shareLog();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-
     @Override
     public void onItemClick(View view, int position, String logText) {
-
+        // Handle item click
     }
 
     @Override
     public void onItemLongClick(View view, int position, String logText) {
-
+        // Handle item long click
     }
 }

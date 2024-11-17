@@ -1,5 +1,6 @@
 package ssh2.matss.ph;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -27,6 +28,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -44,6 +46,7 @@ import ssh2.matss.ph.adapter.ViewPagerAdapter;
 import ssh2.matss.ph.databinding.ActivityMainBinding;
 import ssh2.matss.ph.dialog.CustomServer;
 import ssh2.matss.ph.helper.PayloadGenerator;
+import ssh2.matss.ph.preferences.SummaryEditTextPreference;
 import ssh2.matss.ph.viewmodel.HomeViewModel;
 import ssh2.matss.ph.preferences.PrefsUtil;
 import ssh2.matss.ph.request.RequestUpdate;
@@ -327,7 +330,7 @@ public class MainActivity extends ParentActivity implements VpnStatus.StateListe
      */
 
     private void requestPermissionInfo() {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             // Information dialog in case the user has already denied permissions at least once
             MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(this);
             dialog.setTitle(R.string.title_permission_request);
@@ -335,7 +338,7 @@ public class MainActivity extends ParentActivity implements VpnStatus.StateListe
             //finish();
             dialog.setOnCancelListener(DialogInterface::dismiss);
             dialog.setPositiveButton(R.string.ok, (dialogInterface, position) -> {
-                ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
                 dialogInterface.dismiss();
             });
             dialog.setNegativeButton(R.string.cancel, (dialog1, position) -> {
@@ -344,7 +347,7 @@ public class MainActivity extends ParentActivity implements VpnStatus.StateListe
             });
             dialog.show();
         } else {
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
         }
     }
 
@@ -372,27 +375,39 @@ public class MainActivity extends ParentActivity implements VpnStatus.StateListe
 
         runOnUiThread(() -> {
             String stat;
+
             switch (state) {
                 case AppConstants.STATE_CONNECTED:
                     stat = "STOP";
+
+
                     break;
                 case AppConstants.STATE_CONNECTING:
                 case "AUTH":
                     stat = "CONNECTING";
+
                     break;
+
                 case AppConstants.STATE_DISCONNECTED:
                 case "NOPROCESS":
                     stat = "START";
+
                     break;
                 case AppConstants.STATE_RECONNECTING:
                     stat = "RECONNECTING";
+
                     break;
                 case AppConstants.STATE_STOPPING:
                     stat = "STOPPING";
+
                     break;
                 default:
                     stat = "PLEASE WAIT";
+
             }
+
+
+
             viewModel.setBtnConnectLabel(stat);
             viewModel.setEnableViews(!VpnStatus.isVPNActive());
         });
@@ -559,7 +574,7 @@ public class MainActivity extends ParentActivity implements VpnStatus.StateListe
                     .setMessage("Restoring Data...")
                     .setCancelable(false);
 
-            androidx.appcompat.app.AlertDialog progressDialog = progressDialogBuilder.create();
+            AlertDialog progressDialog = progressDialogBuilder.create();
             progressDialog.show();
 
 

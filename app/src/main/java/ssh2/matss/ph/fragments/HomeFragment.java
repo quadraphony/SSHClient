@@ -39,6 +39,7 @@ import com.google.android.gms.ads.FullScreenContentCallback;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
@@ -100,12 +101,14 @@ public class HomeFragment extends Fragment {
     private boolean isLoading;
 
     private TextView tvAuthor, tvTimer, tvBytesIn, tvBytesOut;
-    private Button btnConnection, btnAddTime, btnClaim;
+    private Button  btnAddTime, btnClaim;
     private Spinner spServer, spNetwork;
     private TextInputLayout inputPayload;
     private TextInputEditText et_payload;
     private LinearLayout layBytes;
     private MaterialSwitch switchCustom;
+    private FloatingActionButton btnConnection;
+    private TextView tvButtonLabel;
 
     private final ActivityResultLauncher<Intent> startActivityIntent = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -187,6 +190,7 @@ public class HomeFragment extends Fragment {
         layBytes = binding.layBytes;
         btnAddTime = binding.btnAddTimer;
         btnClaim = binding.btnClaim;
+        tvButtonLabel = binding.tvButtonLabel;
     }
 
     private void initBindingMethod(){
@@ -300,7 +304,14 @@ public class HomeFragment extends Fragment {
     }
 
     private void initObservers() {
-        viewModel.btnConnectLabel.observe(getViewLifecycleOwner(), label -> btnConnection.setText(label));
+        viewModel.btnConnectLabel.observe(getViewLifecycleOwner(), label -> {
+            // Update the text of the TextView
+            tvButtonLabel.setText(label);
+
+            // Optionally, you can also update the icon of the FAB
+            btnConnection.setImageResource(R.drawable.play_24px);
+        });
+
       /*  viewModel.btnTimerLabel.observe(getViewLifecycleOwner(), pair -> {
             btnAddTime.setText(pair.first);
             btnAddTime.setVisibility(pair.second ? View.VISIBLE : View.GONE);
