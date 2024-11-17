@@ -354,9 +354,9 @@ public class TunnelManagerThread
 				VpnStatus.logError("Proxy: Connection Lost");
 			}
 			else {
-				VpnStatus.logError("Ohara SSH : " + cause);
+				VpnStatus.logError("SSH : " + cause);
 			}
-			VpnStatus.logError("Ohara SSH : " + e.getMessage());
+			VpnStatus.logError("SSH : " + e.getMessage());
 			throw new Exception(e);
 		}
 	}
