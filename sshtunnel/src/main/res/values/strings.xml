@@ -2,7 +2,7 @@
 <resources>
 
 	<string name="app_name">Custom Tweak</string>
-	<string name="app_description">SocksHttp is an SSH TUNNEL client, designed to bypass local locks and network censorship.</string>
+	<string name="app_description">Custom Tweak is an SSH TUNNEL client, designed to bypass local locks and network censorship.</string>
 
 	<string name="attention">Attention</string>
 	<string name="cancel">Cancel</string>

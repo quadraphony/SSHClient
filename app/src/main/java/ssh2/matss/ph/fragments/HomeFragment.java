@@ -42,7 +42,6 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -61,7 +60,6 @@ import ssh2.matss.library.AppConstants;
 import ssh2.matss.library.utils.MTSHelper;
 import ssh2.matss.ph.R;
 import ssh2.matss.ph.activities.ExportActivity;
-import ssh2.matss.ph.activities.SettingsActivity;
 import ssh2.matss.ph.adapter.OharaAdapter;
 import ssh2.matss.ph.cipher.AESCrypt;
 import ssh2.matss.ph.databinding.DialogInputPasswordBinding;

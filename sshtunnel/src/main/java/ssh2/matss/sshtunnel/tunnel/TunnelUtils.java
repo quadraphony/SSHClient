@@ -102,7 +102,7 @@ public class TunnelUtils
 				try {
 					if (n != (split.length-1))
 						Thread.sleep(1000);
-				} catch(InterruptedException e) {}
+				} catch(InterruptedException ignored) {}
 			}
 
 			return true;
@@ -280,17 +280,10 @@ public class TunnelUtils
 	
 	public static boolean isActiveVpn(Context mContext) {
 		ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
-		
-		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-			Network network = cm.getActiveNetwork();
-            NetworkCapabilities capabilities = cm.getNetworkCapabilities(network);
-            
-           return (capabilities!= null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN));
-		}
-		else {
-			NetworkInfo info = cm.getNetworkInfo(ConnectivityManager.TYPE_VPN);
-			
-			return (info != null && info.isConnectedOrConnecting());
-		}
-	}
+
+        Network network = cm.getActiveNetwork();
+        NetworkCapabilities capabilities = cm.getNetworkCapabilities(network);
+
+        return (capabilities!= null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_VPN));
+    }
 }

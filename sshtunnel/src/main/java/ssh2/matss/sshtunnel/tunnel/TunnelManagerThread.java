@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -92,7 +93,6 @@ public class TunnelManagerThread
 			try {
 				if (!TunnelUtils.isNetworkOnline(mContext)) {
 					VpnStatus.updateStateString("WAIT", mContext.getString(R.string.state_nonetwork));
-
 					VpnStatus.logInfo(R.string.state_nonetwork);
 					
 					try {
@@ -479,6 +479,8 @@ public class TunnelManagerThread
 				case 1:
 					if (mCustomPayload != null) {
 						try {
+
+							String base64Payload = Base64.encodeToString(mCustomPayload.getBytes(), Base64.NO_WRAP);
 							ProxyData proxyData = new HttpProxyCustom(
 									server_address,
 									server_port,
@@ -488,7 +490,7 @@ public class TunnelManagerThread
 									true,
 									mContext);
 							conn.setProxyData(proxyData);
-							VpnStatus.logInfo(String.format("Payload: %s", mCustomPayload));
+							//VpnStatus.logInfo(String.format("Payload: %s", base64Payload));
 						} catch(Exception e) {
 							throw new Exception(mContext.getString(R.string.error_proxy_invalid));
 						}
@@ -499,6 +501,7 @@ public class TunnelManagerThread
 					break;
 				case 2:
 					try {
+						String base64Payload = Base64.encodeToString(mCustomPayload.getBytes(), Base64.NO_WRAP);
 						ProxyData proxyData = new HttpProxyCustom(
 								proxy_ip,
 								proxy_port,
@@ -508,8 +511,8 @@ public class TunnelManagerThread
 								false,
 								mContext);
 						conn.setProxyData(proxyData);
-						VpnStatus.logInfo(String.format("Payload: %s", mCustomPayload));
-						VpnStatus.logInfo(rp);
+						//VpnStatus.logInfo(String.format("Payload: %s", base64Payload));
+						//VpnStatus.logInfo(rp);
 					} catch (Exception e) {
 						VpnStatus.logError(R.string.error_proxy_invalid);
 						throw new Exception(mContext.getString(R.string.error_proxy_invalid));
@@ -518,6 +521,7 @@ public class TunnelManagerThread
 				case 3:
 					//VpnStatus.logInfo(String.format("<b>Connection From - %s", "SSH - SSL</b>"));
 					try {
+						String base64Payload = Base64.encodeToString(mCustomSNI.getBytes(), Base64.NO_WRAP);
 						SSLTunnelProxy sslTun = new SSLTunnelProxy(
 								server_address,
 								server_port,
@@ -525,7 +529,7 @@ public class TunnelManagerThread
 								false, mContext);
 						conn.setProxyData(sslTun);
 
-						VpnStatus.logInfo(String.format("SNI Host: %s", mCustomSNI));
+						//VpnStatus.logInfo(String.format("SNI Host: %s", base64Payload));
 					} catch (Exception e) {
 						VpnStatus.logError(R.string.error_proxy_invalid);
 
@@ -650,7 +654,6 @@ public class TunnelManagerThread
 	private synchronized void stopPinger() {
 		if (thPing != null && thPing.isAlive()) {
 			VpnStatus.logInfo("stopping pinger");
-			
 			thPing.interrupt();
 			thPing = null;
 		}
@@ -702,7 +705,7 @@ public class TunnelManagerThread
 		
 		closeSSH();
 		
-		VpnStatus.updateStateString("RECONNECTING", "Reconectando..");
+		VpnStatus.updateStateString("RECONNECTING", "Reconecting..");
 
 		try {
 			Thread.sleep(1000);
@@ -763,7 +766,7 @@ public class TunnelManagerThread
 	@Override
 	public void onReceiveInfo(int id, String msg) {
 		if (id == SERVER_BANNER) {
-			VpnStatus.logInfo("<strong>" + mContext.getString(R.string.log_server_banner) + "</strong> " + msg);
+			//VpnStatus.logInfo("<strong>" + mContext.getString(R.string.log_server_banner) + "</strong> " + msg);
 		}
 	}
 

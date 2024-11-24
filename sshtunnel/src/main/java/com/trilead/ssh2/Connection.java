@@ -789,7 +789,7 @@ public class Connection
 			if (e1 instanceof HTTPProxyException)
 				throw e1;
 
-			throw (IOException) new IOException("There was a problem while connecting to " + hostname + ":" + port)
+			throw (IOException) new IOException("There was a problem while connecting to your Host and Port")
 					.initCause(e1);
 		}
 	}
