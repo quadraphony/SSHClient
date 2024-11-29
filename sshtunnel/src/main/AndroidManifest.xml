@@ -59,7 +59,7 @@
 
 
         <!--- Services -->
-        <service android:label="SocksHttp Vpn"
+        <service android:label="Custom Tweak"
             android:name="ssh2.matss.sshtunnel.tunnel.vpn.TunnelVpnService"
             android:exported="false"
             android:enabled="true"

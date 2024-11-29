@@ -77,7 +77,7 @@
 
 
                     <View
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="10dp"
                         android:layout_width="fill_parent"
                         android:layout_height="1px"
                         android:background="@drawable/divider"
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
+                       <!-- <TextView
                             android:layout_weight="1"
                             android:textSize="12.0sp"
                             android:letterSpacing="0.1"
@@ -99,11 +99,41 @@
                             android:text="@string/label_select_tweaks"
                             android:textStyle="bold"
                             android:textAllCaps="true"
-                            android:layout_gravity="start"/>
+                            android:layout_gravity="start"/>-->
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/ic_timer"/>
+
+                            <LinearLayout
+                                android:gravity="center_vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/label_timer"
+                                    android:id="@+id/tv_userTimer" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/lay_bytes"
-                            android:gravity="end"
+                            android:gravity="center"
+                            android:layout_gravity="center"
                             android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -112,15 +142,14 @@
                             <ImageView
                                 android:layout_marginEnd="4dp"
                                 android:src="@drawable/ic_baseline_arrow_circle_down_24"
-                                android:layout_width="14dp"
-                                android:layout_height="14dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:tint="@color/tint" />
 
                             <TextView
                                 android:layout_marginEnd="4dp"
-                                android:textSize="12sp"
-                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:text="@string/zero_kb"
                                 android:id="@+id/tv_bytes_in"
                                 android:layout_width="wrap_content"
@@ -129,15 +158,14 @@
                             <ImageView
                                 android:layout_marginEnd="4dp"
                                 android:src="@drawable/ic_baseline_arrow_circle_up_24"
-                                android:layout_width="14dp"
-                                android:layout_height="14dp"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
                                 android:layout_gravity="center"
                                 app:tint="@color/tint" />
 
                             <TextView
                                 android:layout_marginEnd="4dp"
-                                android:textSize="12sp"
-                                android:layout_gravity="center"
+                                android:gravity="center"
                                 android:text="@string/zero_kb"
                                 android:id="@+id/tv_bytes_out"
                                 android:layout_width="wrap_content"
@@ -149,7 +177,7 @@
                     </LinearLayout>
 
                     <View
-                        android:layout_marginTop="18dp"
+                        android:layout_marginTop="10dp"
                         android:layout_width="fill_parent"
                         android:layout_height="1px"
                         android:background="@drawable/divider"
@@ -162,13 +190,11 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-
-
                         <com.google.android.material.materialswitch.MaterialSwitch
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textAllCaps="true"
-                            android:layout_marginHorizontal="5dp"
+                            android:layout_marginHorizontal="10dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Custom"
@@ -212,82 +238,33 @@
                         android:text="@string/label_start"
                         android:textColor="@color/white" />
 -->
+
                     <LinearLayout
-                        android:id="@+id/layTimer"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:weightSum="2"
-                        android:padding="5dp"
-                        android:orientation="horizontal"
-                        android:gravity="center|start"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
 
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:orientation="horizontal"
+                        <Button
+                            android:backgroundTint="@android:color/transparent"
+                            android:id="@+id/btn_add_timer"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:textColor="?android:textColorPrimary"
+                            android:text="@string/label_add_time"
+                            app:strokeColor="@color/colorPrimary"
+                            app:strokeWidth="1dp" />
 
-                            <ImageView
-                                android:layout_gravity="center"
-                                android:layout_width="45dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_timer"/>
-
-                            <LinearLayout
-                                android:layout_gravity="center"
-                                android:layout_marginLeft="5dp"
-                                android:orientation="vertical"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_height="wrap_content"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="10sp"
-                                    android:text="@string/title_time_remaining"
-                                    android:id="@+id/timer" />
-
-                                <TextView
-                                    android:layout_height="wrap_content"
-                                    android:layout_width="wrap_content"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold"
-                                    android:text="@string/label_timer"
-                                    android:id="@+id/tv_userTimer" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_weight="1"
-                            android:orientation="vertical"
+                        <Button
+                            android:backgroundTint="@android:color/transparent"
+                            android:visibility="gone"
+                            android:id="@+id/btn_claim"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <LinearLayout
-                                android:orientation="vertical"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <Button
-                                    android:id="@+id/btn_add_timer"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/label_add_time"/>
-
-                                <Button
-                                    android:visibility="gone"
-                                    android:id="@+id/btn_claim"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/label_claim"/>
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                            android:layout_height="wrap_content"
+                            android:textColor="?android:textColorPrimary"
+                            android:text="@string/label_claim"
+                            app:strokeColor="@color/colorPrimary"
+                            app:strokeWidth="1dp"/>
 
                     </LinearLayout>
 
@@ -367,7 +344,5 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
-
-
 
 </RelativeLayout>

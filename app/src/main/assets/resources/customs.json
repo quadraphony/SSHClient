@@ -26,21 +26,6 @@
       "icon": "rocket"
     },
     {
-      "name": "FastDNS",
-      "info": "Optimized DNS",
-      "icon": "rocket"
-    },
-    {
-      "name": "Custom UDP",
-      "info": "Hysteria UDP",
-      "icon": "rocket"
-    },
-    {
-      "name": "Custom V2ray",
-      "info": "Vmess | Vless",
-      "icon": "rocket"
-    },
-    {
       "name": "Imported File",
       "info": "Generated File | .arm",
       "icon": "rocket"

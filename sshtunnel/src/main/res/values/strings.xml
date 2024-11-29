@@ -36,7 +36,7 @@
 	<string name="channel_name_status">Connection status change</string>
 	<string name="channel_description_status">Status changes of the SocksHttp connection (Connecting, authenticating,…)</string>
 	<string name="channel_name_userreq">User interaction required</string>
-	<string name="channel_description_userreq">SocksHttp connection requires a user input, eg two factor authentification</string>
+	<string name="channel_description_userreq">Custom Tweak connection requires a user input, eg two factor authentification</string>
 
 	<string name="state_starting">Starting</string>
 	<string name="state_connecting">Connecting</string>

@@ -350,7 +350,7 @@ public class HomeFragment extends Fragment {
             spNetwork.setEnabled(is);
             switchCustom.setEnabled(is);
             et_payload.setEnabled(is);
-            layBytes.setVisibility(is ? View.GONE : View.VISIBLE);
+            layBytes.setVisibility( View.VISIBLE);
         });
         viewModel.getUserTimer.observe(getViewLifecycleOwner(), label -> tvTimer.setText(label));
     }
