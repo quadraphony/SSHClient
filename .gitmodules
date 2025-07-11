@@ -1,0 +1,3 @@
+[submodule "NekoBoxForAndroid"]
+	path = NekoBoxForAndroid
+	url = https://github.com/MatsuriDayo/NekoBoxForAndroid.git
